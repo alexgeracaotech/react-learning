@@ -11,12 +11,7 @@
   </head>
   <body>
 
-    <h1>React Learning</h1>
-
-    <script
-      crossorigin
-      src="https://alexgeracaotech.github.io/lib/script.js">
-    </script>
+    <div id="root"></div>
 
     <script
       crossorigin
@@ -27,6 +22,33 @@
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
     </script>
-    
+
+    <script
+      crossorigin
+      src="https://unpkg.com/@babel/standalone/babel.min.js">
+    </script>
+
+    <script type="text/babel">
+      
+      const root = document.querySelector('#root');
+
+      const Input = (props) => {
+        return <input type={props.type} />;
+      }
+
+      const App = () => {
+        return (
+          <>
+            <Input type='text' />
+            <Input type='password' />
+            <Input type='checkbox' />
+          </>
+        );
+      }
+
+      ReactDOM.createRoot(root).render(<App/>);
+
+    </script>
+
   </body>
 </html>
